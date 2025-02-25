@@ -42,7 +42,7 @@ Where,
   <img src="https://res.cloudinary.com/dq3pru6ji/image/upload/v1711627032/LSP_1_zj9aqt.png" alt="Liskov Substitution Principle" style="border: 10px solid #b2f2bb; border-radius: 4px;">
 </p>
 
-### Violet LSP
+### Violates LSP
 
 <p align="center">
   <img src="https://res.cloudinary.com/dq3pru6ji/image/upload/v1711627188/LSP_1.1_fnu0x3.png" alt="Liskov Substitution Principle" style="border: 10px solid #b2f2bb; border-radius: 4px;">
@@ -124,7 +124,7 @@ public class Example {
         Bird ostrich = new Ostrich();
         Bird sparrow = new Sparrow();
 
-        // Violet LSP: All subclasses can be substituted for their base class
+        // Violates LSP: All subclasses can be substituted for their base class
         penguin.fly(); // Bird is flying
         penguin.eat(); // Penguin is eating
         penguin.walk(); // Penguin is walking
@@ -143,9 +143,9 @@ public class Example {
 }
 ```
 
-#### Why Violet LSP?
+#### Why Violates LSP?
 
-- In this example, if the `Penguin`, `Ostrich`, or `Sparrow` subclasses throw **exceptions that are not defined** in the `Bird` superclass, it would violet the LSP.
+- In this example, if the `Penguin`, `Ostrich`, or `Sparrow` subclasses throw **exceptions that are not defined** in the `Bird` superclass, it would Violates the LSP.
 
 - This is because code that expects a `Bird` object may not anticipate these additional exceptions, leading to **unexpected behavior** or **runtime errors** when substituting `subclasses` for the `superclass`.
 
@@ -155,7 +155,7 @@ public class Example {
 
   🧐 To maintain LSP compliance, subclass implementations should adhere to the exception specifications defined by the superclass.
 
-### Not Violet LSP
+### Not Violates LSP
 
 <p align="center">
   <img src="https://res.cloudinary.com/dq3pru6ji/image/upload/v1711627189/LSP_1.2_sfg6ac.png" alt="Liskov Substitution Principle" style="border: 10px solid #b2f2bb; border-radius: 4px;">
@@ -244,13 +244,13 @@ public class Example{
 }
 ```
 
-#### Why Not Violet LSP?
+#### Why Not Violates LSP?
 
 - In this example, the superclass `Bird` has two methods `eat()` and `walk()`. Each subclass (`Sparrow`, `Ostrich`, `Penguin`) extends the `Bird` class and provides its own implementation of the `walk()` and `eat()` methods, which is appropriate behavior according to their specific characteristics.
 
 - Additionally, the `Sparrow` class implements the `IFlyable` interface, and the `Penguin` class implements the `ISwimmable` interface. These interfaces define behaviors specific to `flying` and `swimming`, respectively, and the corresponding subclasses provide appropriate implementations.
 
-- Therefore, the code `adheres` (not violet) to `LSP` as each `subclass` can be substituted for an instance of the `superclass` **Bird** without affecting the expected behavior of the program.
+- Therefore, the code `adheres` (not Violates) to `LSP` as each `subclass` can be substituted for an instance of the `superclass` **Bird** without affecting the expected behavior of the program.
 
 # 🧐 Meaning Of Substitution: Any Derived Class Should Be Able To Substitute Its Parent Class Without The Consumer Knowing It.
 
@@ -349,7 +349,7 @@ public class Example{
   <img src="https://res.cloudinary.com/dq3pru6ji/image/upload/v1711654239/LSP_2_jd4xuq.png" alt="Liskov Substitution Principle" style="border: 10px solid #b2f2bb; border-radius: 4px;">
 </p>
 
-### Violet LSP
+### Violates LSP
 
 <p align="center">
   <img src="https://res.cloudinary.com/dq3pru6ji/image/upload/v1711654241/LSP_2.1_graiul.png" alt="Liskov Substitution Principle" style="border: 10px solid #b2f2bb; border-radius: 4px;">
@@ -414,17 +414,17 @@ public class Example{
         Vehicle cycle = new Cycle();
         Vehicle airplane = new Airplane();
 
-        // Car violet LSP
+        // Car Violates LSP
         car.startEngine(); // Car have engine
         car.doMovement(); // Car can move
         car.fly(); // Vehicle may fly
 
-        // Cycle violet LSP
+        // Cycle Violates LSP
         cycle.startEngine(); // Vehicle may have engine
         cycle.doMovement(); // Cycle can move
         cycle.fly(); // Vehicle may fly
 
-        // Only Airplane not violet LSP
+        // Only Airplane not Violates LSP
         airplane.startEngine(); // Airplane have engine
         airplane.doMovement(); // Airplane can move
         airplane.fly(); // Airplane can fly
@@ -432,7 +432,7 @@ public class Example{
 }
 ```
 
-#### Why Violet LSP?
+#### Why Violates LSP?
 
     When does not apply the exception handling in this example then
 
@@ -444,7 +444,7 @@ public class Example{
 
    Similar to the `Car` class, the `Cycle` class also does not override the fly() method. According to the superclass `Vehicle`, all vehicles may fly, but cycles cannot. This again **violates the LSP**, as it introduces unexpected behavior. Additionally, the `startEngine()` method is not overridden, which is not necessarily a violation, but it's worth noting that it adds inconsistency to the interface.
 
-### Not Violet LSP
+### Not Violates LSP
 
 <p align="center">
   <img src="https://res.cloudinary.com/dq3pru6ji/image/upload/v1711654238/LSP_2.2_ppei3x.png" alt="Liskov Substitution Principle" style="border: 10px solid #b2f2bb; border-radius: 4px;">
@@ -528,7 +528,7 @@ public class Example{
 }
 ```
 
-#### Why Not Violet LSP?
+#### Why Not Violates LSP?
 
 1. `Car`, `Cycle`, and `Airplane` are subclasses of `Vehicle`.
 
@@ -544,7 +544,7 @@ Therefore, the Liskov Substitution Principle is not violated in this example.
   <img src="https://res.cloudinary.com/dq3pru6ji/image/upload/v1711684336/LSP_3_g46kkp.png" alt="Liskov Substitution Principle" style="border: 10px solid #b2f2bb; border-radius: 4px;">
 </p>
 
-### Violet LSP
+### Violates LSP
 
 <p align="center">
   <img src="https://res.cloudinary.com/dq3pru6ji/image/upload/v1711684336/LSP_3.1_uos4uz.png" alt="Liskov Substitution Principle" style="border: 10px solid #b2f2bb; border-radius: 4px;">
@@ -600,14 +600,14 @@ public class Example{
         Human child = new Child();
         Human adult = new Adult();
 
-        // Child violet LSP
+        // Child Violates LSP
         child.eat(); // Child is eating
         child.sleep(); // Child is sleeping
         child.work(); // Human can work
         child.makeDinner(); // Human can make dinner
 
 
-        // Only adult not violet LSP
+        // Only adult not Violates LSP
         adult.eat(); // Adult is eating
         adult.sleep(); // Adult is sleeping
         adult.work(); // Adult can work
@@ -616,7 +616,7 @@ public class Example{
 }
 ```
 
-### Not Violet LSP
+### Not Violates LSP
 
 <p align="center">
   <img src="https://res.cloudinary.com/dq3pru6ji/image/upload/v1711684350/LSP_3.2_dmrrp0.png" alt="Liskov Substitution Principle" style="border: 10px solid #b2f2bb; border-radius: 4px;">

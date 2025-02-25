@@ -29,7 +29,7 @@ A class should do only one thing, and it should do it well.
 ### Practical Coding Examples in Java #1
 
 ```java
-// Violet SRP: Chef class with additional responsibilities
+// Violates SRP: Chef class with additional responsibilities
 class Chef {
     public void cook(String dish) {
         System.out.println("Chef is cooking " + dish);
@@ -48,7 +48,7 @@ class Chef {
 }
 
 
-// Not Violet SRP: Chef class with a single responsibility of cooking
+// Not Violates SRP: Chef class with a single responsibility of cooking
 class Chef {
     public void cook(String dish) {
         System.out.println("Chef is cooking " + dish);
@@ -60,7 +60,7 @@ class Chef {
 ### Practical Coding Examples in Java #2
 
 ```java
-// Violet SRP: User class with additional responsibilities
+// Violates SRP: User class with additional responsibilities
 class User {
     public void login() {
         // logic for user login
@@ -75,7 +75,7 @@ class User {
     }
 }
 
-// Not Violet SRP: User class with a single responsibility of login
+// Not Violates SRP: User class with a single responsibility of login
 class User {
     public void login() {
         // logic for user login
@@ -86,7 +86,7 @@ class User {
 ### Practical Coding Examples in Java #3
 
 ```java
-// Violet SRP: BookContainer class with additional responsibilities
+// Violates SRP: BookContainer class with additional responsibilities
 class BookContainer {
     public void manageBooks() {
         // logic for managing books
@@ -99,7 +99,7 @@ class BookContainer {
     }
 }
 
-// Not Violet SRP: All classes with a single responsibility
+// Not Violates SRP: All classes with a single responsibility
 class BookContainer {
     public void manageBooks() {
         // logic for managing books
